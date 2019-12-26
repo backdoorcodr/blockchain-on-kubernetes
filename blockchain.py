@@ -210,7 +210,13 @@ def new_transaction():
     response = {'message': f'Transaction will be added to the block {index}'}
     return jsonify(response), 200
 
-
+@app.route('/nodes/', methods=['GET'])
+def get_nodes():
+    response = {
+        'total_nodes': list(blockchain.nodes)
+    }
+    return jsonify(response), 201
+ 
 
 @app.route('/nodes/register', methods=['POST'])
 def register_nodes():
@@ -254,6 +260,8 @@ def full_chain():
         }
         return jsonify(response), 200
 
+
+   
 if __name__ == '__main__':
     from argparse import ArgumentParser
 
