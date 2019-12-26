@@ -6,9 +6,10 @@ When deploying blockchain on classical machines, several concerns arise such as 
 1. Availability: Should always be available
 2. Resiliency: Should be able to recover from a failure induced by load, attacks and failures. 
 3. Elasticity: It should be able to spin up new blockchain network
-4. Logging, Debugging, Tracing: Should have the ability to trace the performance of blockchain components running within the infrastructure. If something goes wrong, developers should be able to debug.
-5. Health checking and alerting: Should be able to generate alerts and perform health checks. 
-6. Management: Should be able to provide overview of the underlying infrastructure with different stats and status of components running. 
+4. Isolation: Should be able to isolate multiple blockchain infrastructures 
+5. Logging, Debugging, Tracing: Should have the ability to trace the performance of blockchain components running within the infrastructure. If something goes wrong, developers should be able to debug.
+6. Health checking and alerting: Should be able to generate alerts and perform health checks. 
+7. Management: Should be able to provide overview of the underlying infrastructure with different stats and status of components running. 
 
 Hence, in order to address these points; I am setting up a basic blockchain on kubernetes running on minikube. Obviously, if you get access to EKS/AKS; please feel free to make changes accordingly. 
 
@@ -34,6 +35,31 @@ Hence, in order to address these points; I am setting up a basic blockchain on k
 	
 6. Now you can start sending requests to: 
 ``` http://localhost:8080/ ```
+
+Login to Docker
+
+. docker build -t msarimz/playground:blockchain_5000 .
+. docker login -u username -p password
+. docker push msarimz/playground:blockchain_5000 
+
+ 
+ Deployment via Helm:
+ 
+ - helm create blockchain-charts
+ - update the values.yml wiht the repo:
+ 
+ image:
+  repository: msarimz/playground
+  tag: blockchain_5000
+  pullPolicy: Always
+  
+  
+ - helm install blockchain-charts/
+ - check if the pods are running, if yes then start the port forwarding:
+	- kubectl port-forward kubectl port-forward garish-pug-blockchain-chart-67977d5595-zn4sg 8080:5000
+	
+You might see liveness and readiness probe failed, in that case:
+
 
 	
 	
