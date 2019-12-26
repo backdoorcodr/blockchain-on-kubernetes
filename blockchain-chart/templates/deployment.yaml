@@ -29,13 +29,13 @@ spec:
               containerPort: 80
               protocol: TCP
           livenessProbe:
-            httpGet:
-              path: /
-              port: http
+            exec:
+              command:
+                 - env
           readinessProbe:
-            httpGet:
-              path: /
-              port: http
+            exec:
+              command:
+                 - env
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
