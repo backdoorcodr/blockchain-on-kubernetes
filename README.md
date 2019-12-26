@@ -11,7 +11,9 @@ When deploying blockchain on classical machines, several concerns arise such as 
 6. Health checking and alerting: Should be able to generate alerts and perform health checks. 
 7. Management: Should be able to provide overview of the underlying infrastructure with different stats and status of components running. 
 
-Hence, in order to address these points; I am setting up a basic blockchain on kubernetes running on minikube. Obviously, if you get access to EKS/AKS; please feel free to make changes accordingly. 
+Hence, in order to address these points; I am setting up a basic blockchain on kubernetes running on minikube. This basic blockchain has already implemented [here](https://github.com/backdoorcodr/blockchain/blob/master/py-blockchain-api/blockchain.py) 
+
+Obviously, if you get access to EKS/AKS; please feel free to make changes accordingly. 
 
 # Requirements
 1. [minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/) 
