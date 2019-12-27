@@ -38,29 +38,7 @@ Obviously, if you get access to EKS/AKS; please feel free to make changes accord
 6. Now you can start sending requests to: 
 ``` http://localhost:8080/ ```
 
-Login to Docker
 
-. docker build -t msarimz/playground:blockchain_5000 .
-. docker login -u username -p password
-. docker push msarimz/playground:blockchain_5000 
-
- 
- Deployment via Helm:
- 
- - helm create blockchain-charts
- - update the values.yml wiht the repo:
- 
- image:
-  repository: msarimz/playground
-  tag: blockchain_5000
-  pullPolicy: Always
-  
-  
- - helm install blockchain-charts/
- - check if the pods are running, if yes then start the port forwarding:
-	- kubectl port-forward kubectl port-forward garish-pug-blockchain-chart-67977d5595-zn4sg 8080:5000
-	
-You might see liveness and readiness probe failed, in that case:
 
 
 	
