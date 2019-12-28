@@ -13,7 +13,7 @@ When deploying blockchain on classical machines, several concerns arise such as 
 
 Hence, in order to address these points; I am setting up a basic blockchain on kubernetes running on minikube. This basic blockchain has already implemented [here](https://github.com/backdoorcodr/blockchain/blob/master/py-blockchain-api/blockchain.py) 
 
-Obviously, if you get access to EKS/AKS; please feel free to make changes accordingly. 
+Obvious<ly, if you get access to EKS/AKS; please feel free to make changes accordingly. 
 
 # Requirements
 1. [minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/) 
@@ -33,7 +33,11 @@ Obviously, if you get access to EKS/AKS; please feel free to make changes accord
 	* ``` kubectl get pods ```
 
 5. Once the pods gets to running state, this is when it start serving the traffic. For that, we need to do port forwarding so the service can get our requests:
-	* ``` kubectl port-forward kubectl port-forward <pod-name-for-example-blockchain-chart> 8080:5000 ```
+	* ``` kubectl port-forward <pod-name-for-example-blockchain-chart> 8080:5000 ```
 	
 6. Now you can start sending requests to: 
 ``` http://localhost:8080/ ```
+
+	
+ 
+ 

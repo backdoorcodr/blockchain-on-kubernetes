@@ -10,6 +10,6 @@ RUN cd /app && \
 # Add actual source code.
 ADD blockchain.py /app
 
-EXPOSE 5000
+EXPOSE 3000
 
-CMD ["python", "blockchain.py", "--port", "5000"]
+CMD ["python", "blockchain.py", "--port", "3000"]

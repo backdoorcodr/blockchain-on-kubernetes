@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: msarimz/playground
-  tag: blockchain_5000
+  tag: blockchain_3000
   pullPolicy: Always
 
 imagePullSecrets: []
