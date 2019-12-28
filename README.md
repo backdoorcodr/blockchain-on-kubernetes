@@ -37,11 +37,3 @@ Obviously, if you get access to EKS/AKS; please feel free to make changes accord
 	
 6. Now you can start sending requests to: 
 ``` http://localhost:8080/ ```
-
-
-
-
-	
-	
- 
- 
