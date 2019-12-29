@@ -38,14 +38,6 @@ Obviously, if you get access to EKS/AKS; please feel free to make changes accord
 6. Now you can start sending requests to: 
 ``` http://localhost:8080/ ```
 
-
-Login to Docker
-
-. docker build -t msarimz/playground:blockchain_5000 .
-. docker login -u username -p password
-. docker push msarimz/playground:blockchain_5000 
-
-
 	
 	
  
