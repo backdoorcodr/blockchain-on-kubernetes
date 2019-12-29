@@ -13,7 +13,7 @@ When deploying blockchain on classical machines, several concerns arise such as 
 
 Hence, in order to address these points; I am setting up a basic blockchain on kubernetes running on minikube. This basic blockchain has already implemented [here](https://github.com/backdoorcodr/blockchain/blob/master/py-blockchain-api/blockchain.py) 
 
-Obvious<ly, if you get access to EKS/AKS; please feel free to make changes accordingly. 
+Obviously, if you get access to EKS/AKS; please feel free to make changes accordingly. 
 
 # Requirements
 1. [minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/) 
@@ -38,6 +38,15 @@ Obvious<ly, if you get access to EKS/AKS; please feel free to make changes accor
 6. Now you can start sending requests to: 
 ``` http://localhost:8080/ ```
 
+
+Login to Docker
+
+. docker build -t msarimz/playground:blockchain_5000 .
+. docker login -u username -p password
+. docker push msarimz/playground:blockchain_5000 
+
+
+	
 	
  
  
