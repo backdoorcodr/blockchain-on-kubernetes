@@ -1,5 +1,5 @@
 # blockchain-on-kubernetes
-Kubernetes can address a number of concerns of Blockchain infrastructure as mentioned in  article '[Orchestrating Blockchain on Kubernetes]'(https://thesendlessloop.wordpress.com/2019/12/30/orchestrating-blockchain-on-kubernetes/). This project orchestrates a simple blockchain on a locally running Kubernetes based on minikube. 
+Kubernetes can address a number of concerns of Blockchain infrastructure as mentioned in  article ['Orchestrating Blockchain on Kubernetes'](https://thesendlessloop.wordpress.com/2019/12/30/orchestrating-blockchain-on-kubernetes/). This project orchestrates a simple blockchain on a locally running Kubernetes based on minikube. 
 
 [The article](https://thesendlessloop.wordpress.com/2019/12/30/orchestrating-blockchain-on-kubernetes/) also refers to some of the monitoring tools that can help us monitor our blockchain resources running on Kubernetes. 
 
