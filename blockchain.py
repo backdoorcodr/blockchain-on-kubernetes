@@ -140,12 +140,7 @@ class Blockchain(object):
         return guess_hash[:4] == "0000"
 
 # I will use Flask framework to map endpoints to python functions; 
-# hence allowing us to talk to our blockchain over the web using HHTP requests
-# I will create four methods:
-# /transactions : to tell total number of transactions
-# /transactions/new: to create new transaction to the block
-# /mine: to tell our service to mine a new block
-# /chain: to return full blockchain
+# hence allowing us to talk to our blockchain over the web using HHTP requests.
 
 # Instantiate our Node
 app = Flask(__name__)
@@ -167,7 +162,7 @@ def mine():
     last_proof = last_block['proof']
     proof = blockchain.proof_of_work(last_proof)
 
-    # Reward the miner by granting us 1 coin
+    # Reward the miner by granting1 coin
     # The sender is "0" to signify that this node has mined a new coin.
     blockchain.new_transaction(
         sender = "0",
@@ -179,7 +174,7 @@ def mine():
     block = blockchain.new_block(proof, previous_hash)
 
     response = {
-        'message': 'New Block Added!',
+        'message': 'New Block has been added!',
         'index': block['index'],
         'transaction': block['transactions'],
         'proof': block['proof'],
@@ -203,7 +198,7 @@ def new_transaction():
     # Check that the required fields are in the request
     required = ['sender', 'recipient', 'amount']
     if not all (k in values for k in required):
-        return "Missing values", 
+        return "Required values are missing", 
     
     # Create a new Transaction
     index = blockchain.new_transaction(
@@ -229,13 +224,13 @@ def register_nodes():
 
     nodes = values.get('nodes')
     if nodes is None:
-        return "Error: Please supply a valid list of nodes", 400
+        return "Error: Please provide valid list of nodes", 400
 
     for node in nodes:
         blockchain.register_node(node)
     
     response = {
-        'message' : 'New nodes have been added',
+        'message' : 'New node(s) have been added',
         'total_nodes': list(blockchain.nodes)
     }
     return jsonify(response), 201
@@ -250,7 +245,7 @@ def consenses():
         }
     else:
         response = {
-            'message': 'Our blockchain is authoritive',
+            'message': 'Our blockchain is in control',
             'chain': blockchain.chain
         }
     return jsonify(response), 200
