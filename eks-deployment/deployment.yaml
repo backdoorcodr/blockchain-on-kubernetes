@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: "blockchain-deployment"
+  namespace: "blockchain-namespace"
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: "blockchain"
+    spec:
+      containers:
+      - image: 399827803559.dkr.ecr.eu-central-1.amazonaws.com/blockchain:latest
+        imagePullPolicy: Always
+        name: blockchain
+        ports:
+        - containerPort: 8080
